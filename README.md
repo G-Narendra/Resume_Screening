@@ -1,121 +1,74 @@
+# 📄 Resume Screening using ML
 
-# 📄 Resume Screening using Machine Learning
-### AI-Powered Candidate Ranking & Automated NLP Parsing
+**Automated resume classification into job categories using NLP and machine learning.**
 
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python">
-<img src="https://img.shields.io/badge/NLP-NLTK%20%7C%20SpaCy-green?style=for-the-badge">
-<img src="https://img.shields.io/badge/ML-Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn">
-<img src="https://img.shields.io/badge/Status-Optimized-brightgreen?style=for-the-badge">
-<img src="https://img.shields.io/badge/Platform-Jupyter-orange?style=for-the-badge&logo=jupyter">
-</p>
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ---
 
-## 🌟 Overview
+## 🎯 Problem Statement
 
-The recruitment process is often overwhelmed by thousands of applications, making manual review nearly impossible. This project implements an **AI-powered Resume Screening system** that leverages **Natural Language Processing (NLP)** to automate candidate evaluation. By extracting key skills, education, and experience, the system ranks candidates against specific job descriptions with high precision.
-
-
-
-### Core Capabilities:
-- **Smart Information Extraction:** Detects and classifies entities like skills, job titles, and educational degrees using Named Entity Recognition (NER).
-- **Semantic Matching:** Goes beyond basic keywords by using TF-IDF and word embeddings to understand contextual relevance.
-- **Scalable Processing:** Capable of handling hundreds of resumes in seconds, reducing recruiter workload significantly.
-- **Objective Scoring:** Minimizes human bias by providing a data-driven score based on profile-to-job alignment.
+Automated resume classification into job categories using NLP and machine learning.
 
 ---
 
-## 🧠 Tech Stack
+## 📊 What I Built
 
-| Category | Tools |
-| :--- | :--- |
+NLP classification pipeline: text cleaning, TF-IDF vectorization, multiple model comparison for resume categorization.
+
+### Key Results
+
+| Metric | Value |
+|---|---|
+| **Model** | Multiple (Naive Bayes, Linear SVC, Logistic Regression) |
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+|---|---|
 | **Language** | Python 3.8+ |
-| **NLP Frameworks** | NLTK, SpaCy, Transformers (BERT) |
-| **ML Algorithms** | Random Forest, Logistic Regression, SVC |
-| **Data Handling** | Pandas, NumPy |
-| **Visualization** | Matplotlib, Seaborn |
+| **Framework** | Multiple (Naive Bayes, Linear SVC, Logistic Regression) |
 
 ---
 
 ## 📁 Project Structure
 
-```bash
+```
 Resume_Screening/
-├── data/
-│   └── resume_dataset.csv     # Kaggle/Custom dataset for training
-├── src/
-│   └── resumeScreening.ipynb  # Main NLP pipeline & ML training
-├── assets/
-│   └── feature_importance.png # Key skills driving the model
-├── requirements.txt           # Environment dependencies
-└── README.md                  # Project documentation
-
+├── *.ipynb                          # Main notebook
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## ⚙️ Installation & Setup
-
-### 1️⃣ Clone the Repository
+## 🔧 How to Run
 
 ```bash
-git clone [https://github.com/G-Narendra/Resume_Screening.git](https://github.com/G-Narendra/Resume_Screening.git)
-cd Resume_Screening
-
-```
-
-### 2️⃣ Install Dependencies
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
 
-```
-
-### 3️⃣ Start the Analysis
-
-```bash
-jupyter notebook resumeScreening.ipynb
-
+# Run the notebook
+jupyter notebook *.ipynb
 ```
 
 ---
 
-## 📈 Methodology & Performance
+## ⚠️ Limitations
 
-The project follows a rigorous text-processing pipeline:
-
-1. **Cleaning:** Removing special characters, stopwords, and URLs.
-2. **Vectorization:** Converting text into numerical vectors using **TF-IDF** (Term Frequency-Inverse Document Frequency).
-3. **Classification:** Segmenting resumes into categories (e.g., Data Science, Web Dev, HR) to ensure domain-specific ranking.
-
-### Model Metrics:
-
-The system benchmarks several classifiers to ensure maximum accuracy:
-
-* **Random Forest:** Best for capturing non-linear relationships in skill sets.
-* **SVM:** High precision in high-dimensional text data.
-* **Evaluation:** Tracked via **F1-Score** and **Precision** to ensure no top-tier talent is missed.
+- **No cross-validation**
+- **No confidence intervals**
+- **Limited to predefined categories**
 
 ---
 
-## Engineering Decisions & Challenges Solved
+## ⚠️ Disclaimer
 
-| Challenge | Decision | Why |
-|---|---|---|
-| Resumes are unstructured text with varied formats | PDF/text extraction + NLP preprocessing pipeline | Resumes come as PDFs, DOCX, or plain text — a unified extraction layer abstracts format differences |
-| Matching resume to job requires semantic understanding | TF-IDF cosine similarity + keyword extraction | Pure keyword matching misses synonyms; TF-IDF captures semantic similarity while remaining interpretable |
-| Different job roles need different keyword weights | Role-specific keyword dictionaries with TF-IDF weighting | A "Python" keyword matters more for a Data Science role than a Marketing role — role-specific weighting improves matching |
-| Batch screening of many resumes | Vectorized similarity computation with batch processing | Processing resumes one-by-one is slow for 100+ applications — vectorized computation scales linearly |
-
-## 👨‍💻 Author
-
-**Narendra (G‑Narendra)** AI | ML | Python | Full Stack | GenAI Enthusiast
-
-📧 [Email Me](mailto:narendragandikota2540@gmail.com) | 💼 [LinkedIn](https://linkedin.com/in/g-narendra/) | 👨‍💻 [GitHub](https://github.com/G-Narendra)
-
-🌐 [Portfolio](https://g-narendra-portfolio.lovable.app/)
+This is an educational project for learning NLP concepts. It is not intended for production use.
 
 ---
 
-<p align="center">⭐ If you find this project useful, feel free to give it a star! 🚀</p>
+*Built as part of MSc Data Science coursework.*
