@@ -99,6 +99,15 @@ The system benchmarks several classifiers to ensure maximum accuracy:
 
 ---
 
+## Engineering Decisions & Challenges Solved
+
+| Challenge | Decision | Why |
+|---|---|---|
+| Resumes are unstructured text with varied formats | PDF/text extraction + NLP preprocessing pipeline | Resumes come as PDFs, DOCX, or plain text — a unified extraction layer abstracts format differences |
+| Matching resume to job requires semantic understanding | TF-IDF cosine similarity + keyword extraction | Pure keyword matching misses synonyms; TF-IDF captures semantic similarity while remaining interpretable |
+| Different job roles need different keyword weights | Role-specific keyword dictionaries with TF-IDF weighting | A "Python" keyword matters more for a Data Science role than a Marketing role — role-specific weighting improves matching |
+| Batch screening of many resumes | Vectorized similarity computation with batch processing | Processing resumes one-by-one is slow for 100+ applications — vectorized computation scales linearly |
+
 ## 👨‍💻 Author
 
 **Narendra (G‑Narendra)** AI | ML | Python | Full Stack | GenAI Enthusiast
